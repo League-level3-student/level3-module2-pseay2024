@@ -60,7 +60,7 @@ public class _01_SearchingAndSortingAlgorithms {
 		assertEquals(false, Algorithms.containsSOS(message2));
 	}
 
-	/* 6. Write a morse code translator to read the messages. Just kidding! */
+	/* 6. Write a Morse Code translator to read the messages. Just kidding! */
 
 	/* 7. Sort the exam results from lowest to highest. */
 	@Test
