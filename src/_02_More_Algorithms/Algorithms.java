@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+
+import _00_Sorting_Algorithms.SortingVisualizer;
 
 public class Algorithms {
 	public static int findBrokenEgg(List<String> eggs) {
@@ -63,5 +66,45 @@ public class Algorithms {
 			r.add(d);
 		}
 		return r;
+	}
+	public static List<String> sortDNA (List<String> dna)
+	{
+		while (isSorted(dna)!=true)
+		{
+			for (int i = 1; i < dna.size(); i++)
+			{
+				if (dna.get(i-1).length() > dna.get(i).length())
+				{
+					String temp = dna.get(i-1);
+					dna.set(i-1, dna.get(i));
+					dna.set(i, temp);
+				}
+			}
+		}
+		return dna;
+	}
+	
+	public static boolean isSorted(List<String> arr)
+	{
+		for (int i = 1; i < arr.size(); i++)
+		{
+			if (arr.get(i-1).length() > arr.get(i).length()) return false;
+		}
+		return true;
+	}
+	public static List<String> sortWords(List<String> words) {
+		for (int j = 0; j<words.size(); j++)
+		{
+			for (int i = 1; i < words.size(); i++)
+			{
+				if (words.get(i-1).compareTo(words.get(i)) >= 0)
+				{
+					String temp = words.get(i-1);
+					words.set(i-1, words.get(i));
+					words.set(i, temp);
+				}
+			}
+		}
+		return words;
 	}
 }
